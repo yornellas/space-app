@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 const StyledContainer = styled.div`
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 `
 
 const StyledTextInput = styled.input`
@@ -18,12 +18,12 @@ const StyledTextInput = styled.input`
   padding: 12px 16px;
   gap: 365px;
 
-  @font-face {
-    font-family: "Gandhi Sans";
-    src: url("/src/componentes/EstilosGlobais/Fontes/GandhiSans-Regular.otf");
-  }
   font-family: "Gandhi Sans", sans-serif;
   font-size: 20px;
+
+  &::placeholder {
+    color: #D9D9D9;
+  }
 `
 
 const StyledSearchImage = styled.img`
