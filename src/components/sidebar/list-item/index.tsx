@@ -17,6 +17,7 @@ const StyledListItem = styled.li`
 
     display: flex;
     align-items: center;
+    gap: .5rem;
 
     &.active,
     &:hover {
