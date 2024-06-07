@@ -11,15 +11,13 @@ const StyledTextInput = styled.input`
   border-radius: 10px;
   background-color: transparent;
   border: 2px solid #C98CF1;
+  font-size: 20px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 12px 16px;
   gap: 365px;
-
-  font-family: "Gandhi Sans", sans-serif;
-  font-size: 20px;
 
   &::placeholder {
     color: #D9D9D9;
