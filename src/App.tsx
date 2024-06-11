@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import Header from './components/header'
 import Sidebar from './components/sidebar'
 import { GlobalStyles } from './shared/global-styles'
+import Banner from './components/banner'
+import Gallery from './components/gallery'
 
 
 
@@ -11,12 +13,43 @@ const GradientBackground = styled.div`
   min-height: 100vh;
 `
 
+const AppContainer = styled.div`
+  max-width: 100vw;
+  width: 95vw;
+  margin: 0 auto;
+`
+
+const MainContainer = styled.div`
+  display: flex;
+  gap: 3rem;
+`
+
+const GalleryContainer= styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`
+
 function App() {
   return (
     <GradientBackground>
       <GlobalStyles />
-      <Header />
-      <Sidebar />
+
+      <AppContainer>
+        <Header />
+
+      <MainContainer>
+        <Sidebar />
+
+      <GalleryContainer>
+        <Banner />
+        <Gallery />
+      </GalleryContainer>
+
+      </MainContainer>
+
+      </AppContainer>
+
     </GradientBackground>
   )
 }
