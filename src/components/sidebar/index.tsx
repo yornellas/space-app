@@ -14,36 +14,36 @@ const itemsList = [
   {
     href: '',
     text: 'Início',
-    activeIcon: '/public/icons/sidebar/home-active.png',
-    inactiveIcon: '/public/icons/sidebar/home-inactive.png',
+    activeIcon: '/icons/sidebar/home-active.png',
+    inactiveIcon: '/icons/sidebar/home-inactive.png',
     active: true
   },
   {
     href: '',
     text: 'Mais vistas',
-    activeIcon: '/public/icons/sidebar/most-viewed-active.png',
-    inactiveIcon: '/public/icons/sidebar/most-viewed-inactive.png',
+    activeIcon: '/icons/sidebar/most-viewed-active.png',
+    inactiveIcon: '/icons/sidebar/most-viewed-inactive.png',
     active: false
   },
   {
     href: '',
     text: 'Mais curtidas',
-    activeIcon: '/public/icons/sidebar/most-liked-active.png',
-    inactiveIcon: '/public/icons/sidebar/most-liked-inactive.png',
+    activeIcon: '/icons/sidebar/most-liked-active.png',
+    inactiveIcon: '/icons/sidebar/most-liked-inactive.png',
     active: false
   },
   {
     href: '',
     text: 'Novas',
-    activeIcon: '/public/icons/sidebar/new-active.png',
-    inactiveIcon: '/public/icons/sidebar/new-inactive.png',
+    activeIcon: '/icons/sidebar/new-active.png',
+    inactiveIcon: '/icons/sidebar/new-inactive.png',
     active: false
   },
   {
     href: '',
     text: 'Surpreenda-me',
-    activeIcon: '/public/icons/sidebar/surprise-active.png',
-    inactiveIcon: '/public/icons/sidebar/surprise-inactive.png',
+    activeIcon: '/icons/sidebar/surprise-active.png',
+    inactiveIcon: '/icons/sidebar/surprise-inactive.png',
     active: false
   },
 ]
