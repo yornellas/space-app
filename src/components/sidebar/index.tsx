@@ -12,6 +12,7 @@ const StyledList = styled.ul`
 
 const itemsList = [
   {
+    id: 1,
     href: '',
     text: 'Início',
     activeIcon: '/icons/sidebar/home-active.png',
@@ -19,6 +20,7 @@ const itemsList = [
     active: true
   },
   {
+    id: 2,
     href: '',
     text: 'Mais vistas',
     activeIcon: '/icons/sidebar/most-viewed-active.png',
@@ -26,6 +28,7 @@ const itemsList = [
     active: false
   },
   {
+    id: 3,
     href: '',
     text: 'Mais curtidas',
     activeIcon: '/icons/sidebar/most-liked-active.png',
@@ -33,6 +36,7 @@ const itemsList = [
     active: false
   },
   {
+    id: 4,
     href: '',
     text: 'Novas',
     activeIcon: '/icons/sidebar/new-active.png',
@@ -40,6 +44,7 @@ const itemsList = [
     active: false
   },
   {
+    id: 5,
     href: '',
     text: 'Surpreenda-me',
     activeIcon: '/icons/sidebar/surprise-active.png',
@@ -50,7 +55,7 @@ const itemsList = [
 
 function setItemsList() {
   return itemsList.map((item) => {
-    return (<ListItem {...item}/>)
+    return (<ListItem {...item} key={ item.id }/>)
   })
 }
 
