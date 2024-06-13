@@ -1,6 +1,7 @@
 import Tags from "./tags"
 import Title from "../title"
 import styled from "styled-components"
+import GalleryImage from "./gallery-image"
 
 const GalleryContainer = styled.div`
   display: flex;
@@ -10,16 +11,26 @@ const FluidSection = styled.section`
   flex-grow: 1;
 `
 
-const Gallery = () => {
+const ImagesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`
+
+const Gallery = ({ photos = [] }) => {
   return (
     <>
       <Tags />
       <GalleryContainer>
         <FluidSection>
           <Title>Navegue pela galeria</Title>
+          <ImagesContainer>
+            {
+              photos.map(photo => <GalleryImage photo={ photo } key={ photo.id }/>)
+            }
+          </ImagesContainer>
         </FluidSection>
         <Title align="center">Populares</Title>
-
       </GalleryContainer>
     </>
   )
