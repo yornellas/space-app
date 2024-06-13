@@ -5,8 +5,6 @@ import { GlobalStyles } from './shared/global-styles'
 import Banner from './components/banner'
 import Gallery from './components/gallery'
 
-
-
 const GradientBackground = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
   width: 100%;
@@ -24,7 +22,7 @@ const MainContainer = styled.div`
   gap: 3rem;
 `
 
-const GalleryContainer= styled.div`
+const GalleryContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -38,15 +36,15 @@ function App() {
       <AppContainer>
         <Header />
 
-      <MainContainer>
-        <Sidebar />
+        <MainContainer>
+          <Sidebar />
 
-      <GalleryContainer>
-        <Banner />
-        <Gallery />
-      </GalleryContainer>
+          <GalleryContainer>
+            <Banner />
+            <Gallery />
+          </GalleryContainer>
 
-      </MainContainer>
+        </MainContainer>
 
       </AppContainer>
 
