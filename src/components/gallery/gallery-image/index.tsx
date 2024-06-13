@@ -51,7 +51,7 @@ const GalleryImage = ({ photo }) => {
 
   return (
     <StyledGalleryImage expand={ false }>
-      <img src={ photo.path }/>
+      <img src={ photo.path } alt={ photo.alt }/>
       <figcaption>
         <h3>{ photo.title }</h3>
         <footer>
