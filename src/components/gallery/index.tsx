@@ -35,7 +35,7 @@ const Gallery = ({ photos = [], selectPhoto }) => {
             }
           </ImagesContainer>
         </FluidSection>
-        <Title align="center">Populares</Title>
+        <Title $align="center">Populares</Title>
       </GalleryContainer>
     </>
   )
