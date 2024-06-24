@@ -6,6 +6,7 @@ import Banner from './components/banner'
 import Gallery from './components/gallery'
 import photos from './photos.json'
 import { useState } from 'react'
+import ZoomModal from './components/zoom-modal'
 
 const GradientBackground = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -32,6 +33,7 @@ const GalleryContainer = styled.div`
 
 const App = () => {
   const [galleryPhotos, setGalleryPhotos] = useState(photos)
+  const [selectedPhoto, setSelectedPhoto] = useState(null)
 
   return (
     <GradientBackground>
@@ -45,13 +47,17 @@ const App = () => {
 
           <GalleryContainer>
             <Banner />
-            <Gallery photos={ galleryPhotos } />
+            <Gallery
+              photos={galleryPhotos}
+              selectPhoto={photo => setSelectedPhoto(photo)}
+            />
           </GalleryContainer>
 
         </MainContainer>
 
       </AppContainer>
 
+      <ZoomModal selectedPhoto={selectedPhoto}></ZoomModal>
     </GradientBackground>
   )
 }

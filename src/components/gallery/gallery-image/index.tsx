@@ -40,6 +40,7 @@ const StyledGalleryImage = styled.figure<FigureProps>`
 
       span > a{
         padding: 0 .5rem;
+        cursor: pointer;
       }
     }
   }
@@ -57,10 +58,12 @@ const GalleryImage = ({ photo, expand = false, onZoom }) => {
         <footer>
           <p>{ photo.source }</p>
           <span>
-            <a onClick={ () => onZoom(photo) }>
+            <a>
               <img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } />
             </a>
-            <a href=""><img src='icons/expand.png' /></a>
+            <a  onClick={ () => onZoom(photo) }>
+              <img src='icons/expand.png' />
+            </a>
           </span>
         </footer>
       </figcaption>

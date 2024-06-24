@@ -17,7 +17,7 @@ const ImagesContainer = styled.div`
   gap: 2rem;
 `
 
-const Gallery = ({ photos = [] }) => {
+const Gallery = ({ photos = [], selectPhoto }) => {
   return (
     <>
       <Tags />
@@ -26,7 +26,12 @@ const Gallery = ({ photos = [] }) => {
           <Title>Navegue pela galeria</Title>
           <ImagesContainer>
             {
-              photos.map(photo => <GalleryImage photo={ photo } key={ photo.id }/>)
+              photos.map(photo =>
+                <GalleryImage
+                  photo={ photo }
+                  key={ photo.id }
+                  onZoom={ selectPhoto }
+                />)
             }
           </ImagesContainer>
         </FluidSection>
