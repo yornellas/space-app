@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 type FigureProps = {
-  expand: boolean
+  $expand: boolean
 }
 
 const StyledGalleryImage = styled.figure<FigureProps>`
@@ -9,7 +9,7 @@ const StyledGalleryImage = styled.figure<FigureProps>`
   flex-direction: column;
 
   max-width: 100%;
-  width: ${(props) => (props.expand ? '90%' : '22rem')};
+  width: ${(props) => (props.$expand ? '90%' : '22rem')};
   margin: 0;
 
   color: #FFFFFF;
@@ -45,19 +45,21 @@ const StyledGalleryImage = styled.figure<FigureProps>`
   }
 `
 
-const GalleryImage = ({ photo }) => {
+const GalleryImage = ({ photo, expand = false, onZoom }) => {
   const favoriteIcon = 'icons/favorite.png'
   const favoriteActiveIcon = 'icons/favorite-active.png'
 
   return (
-    <StyledGalleryImage expand={ false }>
+    <StyledGalleryImage $expand={ expand }>
       <img src={ photo.path } alt={ photo.alt }/>
       <figcaption>
         <h3>{ photo.title }</h3>
         <footer>
           <p>{ photo.source }</p>
           <span>
-            <a href=""><img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } /></a>
+            <a onClick={ () => onZoom(photo) }>
+              <img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } />
+            </a>
             <a href=""><img src='icons/expand.png' /></a>
           </span>
         </footer>
