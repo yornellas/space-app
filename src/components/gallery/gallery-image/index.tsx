@@ -46,12 +46,12 @@ const StyledGalleryImage = styled.figure<FigureProps>`
   }
 `
 
-const GalleryImage = ({ photo, expand = false, onZoom }) => {
+const GalleryImage = ({ photo, expand = false, onZoom = undefined }) => {
   const favoriteIcon = 'icons/favorite.png'
   const favoriteActiveIcon = 'icons/favorite-active.png'
 
   return (
-    <StyledGalleryImage $expand={ expand }>
+    <StyledGalleryImage $expand={ expand } id={ photo.id }>
       <img src={ photo.path } alt={ photo.alt }/>
       <figcaption>
         <h3>{ photo.title }</h3>
