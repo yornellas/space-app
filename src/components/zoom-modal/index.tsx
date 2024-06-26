@@ -7,7 +7,7 @@ const ZoomModal = ({ selectedPhoto }) =>{
         selectedPhoto && <dialog open={ !!selectedPhoto }>
           <GalleryImage
             photo={ selectedPhoto }
-            expand={ true }
+            expand={ !!selectedPhoto }
           />
           <p>Hello</p>
           <form method="dialog">

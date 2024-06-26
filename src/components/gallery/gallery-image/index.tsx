@@ -53,20 +53,23 @@ const GalleryImage = ({ photo, expand = false, onZoom = undefined }) => {
   return (
     <StyledGalleryImage $expand={ expand } id={ photo.id }>
       <img src={ photo.path } alt={ photo.alt }/>
-      <figcaption>
-        <h3>{ photo.title }</h3>
-        <footer>
-          <p>{ photo.source }</p>
-          <span>
-            <a>
-              <img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } />
-            </a>
-            <a  onClick={ () => onZoom(photo) }>
-              <img src='icons/expand.png' />
-            </a>
-          </span>
-        </footer>
-      </figcaption>
+        <figcaption>
+          <h3>{ photo.title }</h3>
+          <footer>
+            <p>{ photo.source }</p>
+            <span>
+              <a>
+                <img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } />
+              </a>
+              {
+                !expand &&
+                <a  onClick={ () => onZoom(photo) }>
+                  <img src='icons/expand.png' />
+                </a>
+              }
+            </span>
+          </footer>
+        </figcaption>
     </StyledGalleryImage>
   )
 }
