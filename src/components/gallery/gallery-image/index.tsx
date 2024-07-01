@@ -46,7 +46,7 @@ const StyledGalleryImage = styled.figure<FigureProps>`
   }
 `
 
-const GalleryImage = ({ photo, expand = false, onZoom = undefined }) => {
+const GalleryImage = ({ photo, favorite = false, expand = false, onZoom = undefined }) => {
   const favoriteIcon = 'icons/favorite.png'
   const favoriteActiveIcon = 'icons/favorite-active.png'
 
@@ -59,7 +59,7 @@ const GalleryImage = ({ photo, expand = false, onZoom = undefined }) => {
             <p>{ photo.source }</p>
             <span>
               <a>
-                <img src={ photo.favorite ? favoriteIcon : favoriteActiveIcon } />
+                <img src={ photo.favorite ? favoriteActiveIcon : favoriteIcon } />
               </a>
               {
                 !expand &&
