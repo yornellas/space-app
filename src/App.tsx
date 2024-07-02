@@ -5,7 +5,7 @@ import { GlobalStyles } from './shared/global-styles'
 import Banner from './components/banner'
 import Gallery from './components/gallery'
 import photos from './photos.json'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import ZoomModal from './components/zoom-modal'
 
 const GradientBackground = styled.div`
@@ -31,9 +31,29 @@ const GalleryContainer = styled.div`
   flex: 1;
 `
 
+type Photo = {
+  title: string;
+  source: string;
+  path: string;
+  id: string;
+  tagId: number;
+  favorite?: boolean
+}
+
 const App = () => {
-  const [galleryPhotos, setGalleryPhotos] = useState(photos)
+  const [galleryPhotos, setGalleryPhotos]: [Photo[], Dispatch<SetStateAction<Photo[]>>] =
+    useState(photos)
   const [selectedPhoto, setSelectedPhoto] = useState(null)
+
+  const toggleFavorite = (photo) => {
+    setGalleryPhotos(galleryPhotos.map(galleryPhoto => {
+      return {
+        ...galleryPhoto,
+        favorite: galleryPhoto.id === photo.id ?
+          !photo.favorite : galleryPhoto.favorite
+      }
+    }))
+  }
 
   return (
     <GradientBackground>
@@ -49,7 +69,8 @@ const App = () => {
             <Banner />
             <Gallery
               photos={galleryPhotos}
-              selectPhoto={photo => setSelectedPhoto(photo)}
+              selectPhoto={ photo => setSelectedPhoto(photo) }
+              toggleFavorite={ toggleFavorite }
             />
           </GalleryContainer>
 

@@ -17,7 +17,7 @@ const ImagesContainer = styled.div`
   gap: 2rem;
 `
 
-const Gallery = ({ photos = [], selectPhoto }) => {
+const Gallery = ({ photos = [], selectPhoto, toggleFavorite }) => {
   return (
     <>
       <Tags />
@@ -31,6 +31,7 @@ const Gallery = ({ photos = [], selectPhoto }) => {
                   photo={ photo }
                   key={ photo.id }
                   onZoom={ selectPhoto }
+                  toggleFavorite={ toggleFavorite }
                 />)
             }
           </ImagesContainer>
