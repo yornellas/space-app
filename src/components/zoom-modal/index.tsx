@@ -31,17 +31,18 @@ const StyledDialog = styled.dialog<{onClose}>`
   }
 `
 
-const ZoomModal = ({ selectedPhoto, onClose }) =>{
+const ZoomModal = ({ selectedPhoto, onClose, toggleFavorite }) =>{
   return (
     <>
       {
         selectedPhoto && <>
           <Overlay />
 
-          <StyledDialog open={ !!selectedPhoto } onClose={{ onClose }}>
+          <StyledDialog open={ !!selectedPhoto } onClose={ onClose }>
             <GalleryImage
               photo={ selectedPhoto }
               expand={ !!selectedPhoto }
+              toggleFavorite={ toggleFavorite }
             />
             <form method="dialog">
               <button formMethod="dialog">
